@@ -41,6 +41,25 @@ public class User {
         this.accounts = new ArrayList<>();
     }
 
+    //aggregated money of all users accounts in their name
+    public double totalAmountOfMoney() {
+
+        //accounts is our list of all accounts
+        double sum = 0;
+        for (Account account : accounts) {
+            sum += account.getBalance();
+        }
+        return  sum;
+//
+//        //alternative way to get the result with index solution.
+//        double sumWithIndex = 0;
+//        for (int i = 0; i < accounts.size(); i++) {
+//            sumWithIndex += accounts.get(i).getBalance();
+//        }
+//        return sumWithIndex;
+
+    }
+
     public void addNewAccount(String currency) {
         Account newAccount = new Account(currency);
         accounts.add(newAccount);

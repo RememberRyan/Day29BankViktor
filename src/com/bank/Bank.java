@@ -30,4 +30,8 @@ public class Bank {
     }
 
 
+    //total money for a user, by userID
+    public double totalAmountOfUser(String userId) {
+    
+    }
 }
