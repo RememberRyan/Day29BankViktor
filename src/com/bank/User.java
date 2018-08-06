@@ -1,22 +1,50 @@
 package com.bank;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class User {
-    //package-private by default
 
-    //UUID java generates random strings
+    //package-private by default
+//
+//    //UUID java generates random strings
     private String id; //= UUID.randomUUID().toString();
     private String password;
     private String fullName;
     private String address;
-    private long accountNumber;
+    private List<Account> accounts;
     private String phoneNumber;
     private String email;
     private String secretQuestion;
-    private String answerForSecretAnswer;
+    private String answerForSecretQuestion;
 
-    //setters and getters
+    public User(String password,
+                String fullName,
+                String address,
+                //decided as class to remove this
+                //this.accountNumber = accountNumber;
+                String phoneNumber,
+                String email,
+                String secretQuestion,
+                String answerForSecretQuestion) {
+
+        //generate create new IDs
+        this.id = UUID.randomUUID().toString();
+        this.password = password;
+        this.fullName = fullName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.secretQuestion = secretQuestion;
+        this.answerForSecretQuestion = answerForSecretQuestion;
+        this.accounts = new ArrayList<>();
+    }
+
+    public void addNewAccount(String currency) {
+        Account newAccount = new Account(currency);
+        accounts.add(newAccount);
+    }
 
     public String getId() {
         return id;
@@ -50,14 +78,6 @@ public class User {
         this.address = address;
     }
 
-    public long getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(long accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -82,36 +102,12 @@ public class User {
         this.secretQuestion = secretQuestion;
     }
 
-    public String getAnswerForSecretAnswer() {
-        return answerForSecretAnswer;
+    public String getAnswerForSecretQuestion() {
+        return answerForSecretQuestion;
     }
 
-    public void setAnswerForSecretAnswer(String answerForSecretAnswer) {
-        this.answerForSecretAnswer = answerForSecretAnswer;
-    }
-
-    // constructor method
-    public User(
-                String password,
-                String fullName,
-                String address,
-                long accountNumber,
-                String phoneNumber,
-                String email,
-                String secretQuestion,
-                String answerForSecretAnswer) {
-
-        //create new IDs
-        this.id = UUID.randomUUID().toString();
-        this.password = password;
-        this.fullName = fullName;
-        this.address = address;
-        //decided as class to remove this
-        //this.accountNumber = accountNumber;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.secretQuestion = secretQuestion;
-        this.answerForSecretAnswer = answerForSecretAnswer;
+    public void setAnswerForSecretQuestion(String answerForSecretQuestion) {
+        this.answerForSecretQuestion = answerForSecretQuestion;
     }
 
     //generated methodToString for printout
@@ -122,11 +118,11 @@ public class User {
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", address='" + address + '\'' +
-                ", accountNumber=" + accountNumber +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", secretQuestion='" + secretQuestion + '\'' +
-                ", answerForSecretAnswer='" + answerForSecretAnswer + '\'' +
+                ", answerForSecretQuestion='" + answerForSecretQuestion + '\'' +
                 '}';
     }
+
 }
