@@ -60,6 +60,11 @@ public class User {
 
     }
 
+    //add money to the account
+    public void addMoney(long accountId, double amountOfMoney){
+
+    }
+
     public void addNewAccount(String currency) {
         Account newAccount = new Account(currency);
         accounts.add(newAccount);

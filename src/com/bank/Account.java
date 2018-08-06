@@ -40,6 +40,9 @@ public class Account {
         this.currency = currency;
     }
 
+    public void addMoney(double amountOfMoney){
+        this.balance += amountOfMoney;
+    }
 
     @Override
     public String toString() {

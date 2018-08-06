@@ -31,7 +31,18 @@ public class Bank {
 
 
     //total money for a user, by userID
-    public double totalAmountOfUser(String userId) {
-    
+    //traverses sequentially through users and matches Id
+    public Double totalAmountOfUser(String userId) {
+        for (User user: users){
+            if (user.getId().equals(userId)){
+                return user.totalAmountOfMoney();
+            }
+        }
+        return null;
+    }
+
+    //adding money to a user's account
+    public void addMoneyToUser(String userId, long accountId, double amountOfMoney){
+
     }
 }
