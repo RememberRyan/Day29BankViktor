@@ -43,6 +43,10 @@ public class Bank {
 
     //adding money to a user's account
     public void addMoneyToUser(String userId, long accountId, double amountOfMoney){
-
+        for (User user: users) {
+            if (userId.equals(user.getId())){
+                user.addMoneyToAccount(accountId, amountOfMoney);
+            }
+        }
     }
 }

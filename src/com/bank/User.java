@@ -61,8 +61,14 @@ public class User {
     }
 
     //add money to the account
-    public void addMoney(long accountId, double amountOfMoney){
-
+    public void addMoney (long accountId, double amountOfMoney){
+//        //ryan attempt
+//        for (User accountId: accountId){
+//            if (user.accountId().equals(accountId)){
+//                addMoney.amountOfMoney;
+//            }
+//        }
+//        return null;
     }
 
     public void addNewAccount(String currency) {
@@ -132,6 +138,17 @@ public class User {
 
     public void setAnswerForSecretQuestion(String answerForSecretQuestion) {
         this.answerForSecretQuestion = answerForSecretQuestion;
+    }
+
+    //class exercise to add money to the account
+    public void addMoneyToAccount(long accountId, double amountOfMoney){
+        for (Account account :accounts) {
+            if (account.getAccountNumber() == accountId) {
+                account.addMoney(amountOfMoney);
+                //like a 'break', we use empty return to guarantee we only add money once!
+                return;
+            }
+        }
     }
 
     //generated methodToString for printout
