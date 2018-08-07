@@ -1,5 +1,6 @@
 package com.bank;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
@@ -8,12 +9,19 @@ public class Bank {
     private List<User> users;
     private String bankName;
 
+
+
     // constructor
     public Bank(String bankName) {
+
         this.bankName = bankName;
+        this.users = new ArrayList<>();
     }
 
     //methods
+    public String getBankName() {
+        return bankName;
+    }
 
     //user comes to the bank and we create a new user
     public void addUser(String password, String fullName, String address,
@@ -48,5 +56,13 @@ public class Bank {
                 user.addMoneyToAccount(accountId, amountOfMoney);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "users=" + users +
+                ", bankName='" + bankName + '\'' +
+                '}';
     }
 }

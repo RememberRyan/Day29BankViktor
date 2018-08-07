@@ -152,6 +152,21 @@ public class User {
     }
 
     //generated methodToString for printout
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id='" + id + '\'' +
+//                ", password='" + password + '\'' +
+//                ", fullName='" + fullName + '\'' +
+//                ", address='" + address + '\'' +
+//                ", phoneNumber='" + phoneNumber + '\'' +
+//                ", email='" + email + '\'' +
+//                ", secretQuestion='" + secretQuestion + '\'' +
+//                ", answerForSecretQuestion='" + answerForSecretQuestion + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "User{" +
@@ -159,11 +174,11 @@ public class User {
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", address='" + address + '\'' +
+                ", accounts=" + accounts +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", secretQuestion='" + secretQuestion + '\'' +
                 ", answerForSecretQuestion='" + answerForSecretQuestion + '\'' +
                 '}';
     }
-
 }
