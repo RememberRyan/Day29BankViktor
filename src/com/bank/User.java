@@ -22,8 +22,6 @@ public class User {
     public User(String password,
                 String fullName,
                 String address,
-                //decided as class to remove this
-                //this.accountNumber = accountNumber;
                 String phoneNumber,
                 String email,
                 String secretQuestion,
@@ -60,21 +58,16 @@ public class User {
 
     }
 
-    //add money to the account
-    public void addMoney (long accountId, double amountOfMoney){
-//        //ryan attempt
-//        for (User accountId: accountId){
-//            if (user.accountId().equals(accountId)){
-//                addMoney.amountOfMoney;
-//            }
-//        }
-//        return null;
-    }
 
     public void addNewAccount(String currency) {
         Account newAccount = new Account(currency);
         accounts.add(newAccount);
     }
+
+//    //main.class Case1 implementation attempt
+//    public void createNewUser(password, fullName); {
+//
+//    }
 
     public String getId() {
         return id;
@@ -140,7 +133,7 @@ public class User {
         this.answerForSecretQuestion = answerForSecretQuestion;
     }
 
-    //class exercise to add money to the account
+    //classroom exercise to add money to the account
     public void addMoneyToAccount(long accountId, double amountOfMoney){
         for (Account account :accounts) {
             if (account.getAccountNumber() == accountId) {
@@ -151,20 +144,17 @@ public class User {
         }
     }
 
-    //generated methodToString for printout
-//    @Override
-//    public String toString() {
-//        return "User{" +
-//                "id='" + id + '\'' +
-//                ", password='" + password + '\'' +
-//                ", fullName='" + fullName + '\'' +
-//                ", address='" + address + '\'' +
-//                ", phoneNumber='" + phoneNumber + '\'' +
-//                ", email='" + email + '\'' +
-//                ", secretQuestion='" + secretQuestion + '\'' +
-//                ", answerForSecretQuestion='" + answerForSecretQuestion + '\'' +
-//                '}';
-//    }
+    //withdraw from account
+    public void withdrawMoneyFromAccount(long accountId, double amountOfMoney){
+        for (Account account :accounts) {
+            if (account.getAccountNumber() == accountId) {
+                account.withdrawMoney(amountOfMoney);
+                //like a 'break', we use empty return to guarantee we only add money once!
+                return;
+            }
+        }
+    }
+
 
 
     @Override

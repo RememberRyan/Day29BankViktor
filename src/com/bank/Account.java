@@ -44,6 +44,11 @@ public class Account {
         this.balance += amountOfMoney;
     }
 
+    //withdraws money from the account
+    public void withdrawMoney(double amountOfMoney){
+        this.balance -= amountOfMoney;
+    }
+
     @Override
     public String toString() {
         return "Account{" +

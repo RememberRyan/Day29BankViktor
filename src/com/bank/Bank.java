@@ -58,6 +58,15 @@ public class Bank {
         }
     }
 
+    //withdrawing money to user's account
+    public void withdrawMoneyFromUser(String userId, long accountId, double amountOfMoney){
+        for (User user: users) {
+            if (userId.equals(user.getId())){
+                user.withdrawMoneyFromAccount(accountId, amountOfMoney);
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Bank{" +
