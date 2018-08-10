@@ -5,6 +5,7 @@ public enum Currency {
     GBP,
     USD;
 
+    // Further advance features that could be implemented:
 //    EUR("eur", "EURO"),
 //    GDP("gdp", "GB"),
 //    USD("usd", "$");
